@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript"></script>
+	<title> Web Developer Test</title>
+	
+	<script>
+		function ShowInfo(name, email) 
+		{
+			alert(name + "\n" + email);
+		}
+	</script>
+	
+</head>
+
+<body>		
+<h1> eBASE Developer Application Test </h1>
+
+<?php
+		
+	$people = array(
+		   array(1, 'John', 'Smith', 'john.smith@hotmail.com'),
+		   array(2, 'Paul', 'Allen', 'paul.allen@microsoft.com'),
+		   array(3, 'James', 'Johnston','james.johnston@gmail.com'),
+		   array(4, 'Steve', 'Buscemi', 'steve.buscemi@yahoo.com'),
+		   array(5, 'Doug', 'Simons', 'doug.simons@hotmail.com')
+	);
+
+
+
+	echo "<table>
+			<tr>
+				<th> Name </th>
+				<th> Email </th>
+				<th> </th>
+			</tr>";
+		 
+	for($row = 0; $row < count($people); $row++ )
+	{		
+		$fullName = $people[$row][1]. " " .$people[$row][2];
+		$email = $people[$row][3];		
+
+		echo "<tr>
+				<td>".$fullName. "</td>
+				<td>".$email."</td>
+				<td><button onclick='ShowInfo(\"$fullName\" ".","."\"$email\")'>Show Info</button>	</td>			
+			 </tr>";		
+	}
+	echo "</table>";  
+ 
+?>
+		
+		
+</body>
+</html>
